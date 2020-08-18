@@ -4,7 +4,7 @@
       <q-toolbar>
         
         <q-toolbar-title class="absolute-center">
-          GoMedia-Auth: ChatBot
+          {{ title }}
         </q-toolbar-title>
 
       </q-toolbar>
@@ -20,10 +20,13 @@
 import { openURL } from 'quasar'
 
 export default {
-  name: 'MainLayout',
-  data () {
-    return {
-      leftDrawOpen: this.$q.platform.is.desktop
+  computed: {
+    title() {
+      console.log(this.$route)
+      let currentPath = this.$route.fullPath
+      if (currentPath == '/') return 'GomediaTest'
+      else if (currentPath == 'chat') return 'Chat'
+      else if (currentPath == 'auth') return 'Login' 
     }
   },
   methods: {
