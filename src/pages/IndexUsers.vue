@@ -21,7 +21,7 @@
 
         <q-item-section side>
             <q-badge color="blue">
-              Online
+              {{ user.online ? 'Online' : 'Offline' }}
             </q-badge>
         </q-item-section>
       </q-item>
@@ -37,15 +37,19 @@
       users: [ {
         id: 1,
         name: 'Daniel wakefield',
+        online: true
      },  {
         id: 2,
         name: 'Ragnar Lothbrock',
+        online: true
      },  {
         id: 3,
         name: 'Bjorn  Ironside',
+        online: false
      },  {
         id: 4,
-        name: 'Ivar the Boneless'
+        name: 'Ivar the Boneless',
+        online: true
      }]
 
      }
