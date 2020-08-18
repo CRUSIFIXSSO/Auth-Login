@@ -6,6 +6,7 @@
       <q-item 
       v-for="user in users" 
       :key="user.id" 
+      to="/chat"
       clickable 
       v-ripple>
         <q-item-section avatar>
@@ -16,7 +17,6 @@
 
         <q-item-section>
           <q-item-label>{{ user.name }}</q-item-label>
-          <q-item-label caption lines="1">{{ user.email }}</q-item-label>
         </q-item-section>
 
         <q-item-section side>
