@@ -1,7 +1,15 @@
 <template>
   <q-page class="flex colum">
     <div class="q-pa-md column col">
-      
+      <q-chat-message
+        name="me"
+        :text="['hey, how are you?']"
+        sent
+      />
+      <q-chat-message
+        name="Jane"
+        :text="['doing fine, how r you?']"
+      />
     </div>
      <q-footer elevated>
         <q-toolbar>
