@@ -1,14 +1,17 @@
 <template>
-  <q-page class="flex">
+  <q-page class="flex colum">
+    <div class="q-pa-md column col">
+      
+    </div>
      <q-footer elevated>
         <q-toolbar>
           <q-input
+           v-model="newMessage"
            bg-color="white"
            class="full-width"
            outlined
            rounded
-           v-model="text" 
-           label="Label" 
+           label="Message" 
            dense>
   
          <template v-slot:after>
@@ -27,7 +30,11 @@
 
 <script>
 export default {
-  
+  data(){
+    return{
+      newMessage: ''
+    }
+  }
 }
 </script>
 
