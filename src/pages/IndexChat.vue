@@ -1,14 +1,12 @@
 <template>
   <q-page class="flex colum">
-    <div class="q-pa-md column col">
+    <div class="q-pa-md column col justify-end">
       <q-chat-message
-        name="me"
-        :text="['hey, how are you?']"
+        v-for="message in messages"
+        :key="message.text"
+        :name="message.from"
+        :text="[message.text]"
         sent
-      />
-      <q-chat-message
-        name="Jane"
-        :text="['doing fine, how r you?']"
       />
     </div>
      <q-footer elevated>
@@ -40,7 +38,21 @@
 export default {
   data(){
     return{
-      newMessage: ''
+      newMessage: '',
+      messages: [
+        {
+          text:'Hey Gomedia am build a VueJS app',
+          from: 'me'
+        },
+        {
+          text:' Good thanks, Atuan, How are you',
+          from: 'them'
+        },
+        {
+          text:'Preety good!',
+          from: 'me'
+        }
+      ]
     }
   }
 }
